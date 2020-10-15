@@ -13,8 +13,8 @@ namespace ProjetoTCC2020.DAL
         public DBHelper()
         {
             // Mudar string de conexão se mudar de banco
-            StringConexao = @"Data Source=DESKTOP-9IUVQQE\SQLEXPRESS;Initial Catalog=Consultorio;Integrated Security=True"; // PIZZINI
-            //StringConexao = @"Data Source=DESKTOP-64EMUFN\SQLEXPRESS;Initial Catalog=Clinica;Integrated Security=True"; // LUCAS
+            StringConexao = @"Data Source=DESKTOP-9IUVQQE\SQLEXPRESS;Initial Catalog=Consultorio;Integrated Security=True";
+
             Conexao = new SqlConnection(StringConexao);
         }
         public DBHelper(String stringConexao)
