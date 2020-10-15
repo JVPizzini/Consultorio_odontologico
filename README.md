@@ -19,7 +19,7 @@ Dentro do arquivo DBHelper existe a String onde é possível fazer a conexão do
 Muito obrigado pela atenção
 
 #### SOBRE O AUTOR/ORGANIZADOR
-João Vitor Pizzini da Silva
-joaovitorpizzini@hotmail.com
+João Vitor Pizzini da Silva.
+E-mail : joaovitorpizzini@hotmail.com
 
 Se tiver alguma idéia e quiser compartilhar ou simplismente que trocar, da um toque la no insta! @jvpizzini
