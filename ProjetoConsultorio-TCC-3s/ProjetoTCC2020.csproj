@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EAE7D16-CD03-45AB-9651-4B7E74055EB9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoTCC2020</RootNamespace>
+    <AssemblyName>ProjetoTCC2020</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\CidadeBUS.cs" />
+    <Compile Include="BUS\AgendamentoBUS.cs" />
+    <Compile Include="BUS\FuncionarioBUS.cs" />
+    <Compile Include="BUS\ProfissionalBUS.cs" />
+    <Compile Include="BUS\ClienteBUS.cs" />
+    <Compile Include="BUS\EstadoBUS.cs" />
+    <Compile Include="BUS\ServicosBUS.cs" />
+    <Compile Include="BUS\UsuarioBUS.cs" />
+    <Compile Include="DAO\CidadeDAO.cs" />
+    <Compile Include="DAO\EstadoDAO.cs" />
+    <Compile Include="DAO\AgendamentoDAO.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\ProfissionalDAO.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\IDataAccessObject.cs" />
+    <Compile Include="DAO\ServicosDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="Models\Cidade.cs" />
+    <Compile Include="Models\Estado.cs" />
+    <Compile Include="Models\Horario.cs" />
+    <Compile Include="Models\RetornoBanco.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioSessao.cs" />
+    <Compile Include="View\Agendamento\fmHorariosDisp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Agendamento\fmHorariosDisp.Designer.cs">
+      <DependentUpon>fmHorariosDisp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Agendamento\fmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Agendamento\fmRelatorio.Designer.cs">
+      <DependentUpon>fmRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Agendamento\fmAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Agendamento\fmAgenda.Designer.cs">
+      <DependentUpon>fmAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Agendamento\FormTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Agendamento\FormTeste.Designer.cs">
+      <DependentUpon>FormTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadastroFuncionario.Designer.cs">
+      <DependentUpon>fmCadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadatroDeConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadatroDeConsulta.Designer.cs">
+      <DependentUpon>fmCadatroDeConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadastroProfissional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadastroProfissional.Designer.cs">
+      <DependentUpon>fmCadastroProfissional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\fmCadastroCliente.Designer.cs">
+      <DependentUpon>fmCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgendamentoModel.cs" />
+    <Compile Include="DAL\DBHelper.cs" />
+    <Compile Include="Models\Profissional .cs" />
+    <Compile Include="Models\Servico.cs" />
+    <Compile Include="View\Login\fmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\fmLogin.Designer.cs">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\usuario.cs" />
+    <Compile Include="Consutorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consutorio.Designer.cs">
+      <DependentUpon>Consutorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="View\Pesquisa\fmPesquisaServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pesquisa\fmPesquisaServico.Designer.cs">
+      <DependentUpon>fmPesquisaServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pesquisa\fmPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pesquisa\fmPesquisa.Designer.cs">
+      <DependentUpon>fmPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Serviços\fmServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Serviços\fmServicos.Designer.cs">
+      <DependentUpon>fmServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Validacao.cs" />
+    <EmbeddedResource Include="View\Agendamento\fmHorariosDisp.resx">
+      <DependentUpon>fmHorariosDisp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Agendamento\fmRelatorio.resx">
+      <DependentUpon>fmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Agendamento\fmAgenda.resx">
+      <DependentUpon>fmAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\fmCadastroFuncionario.resx">
+      <DependentUpon>fmCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\fmCadatroDeConsulta.resx">
+      <DependentUpon>fmCadatroDeConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\fmCadastroProfissional.resx">
+      <DependentUpon>fmCadastroProfissional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\fmCadastroCliente.resx">
+      <DependentUpon>fmCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\fmLogin.resx">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consutorio.resx">
+      <DependentUpon>Consutorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pesquisa\fmPesquisaServico.resx">
+      <DependentUpon>fmPesquisaServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pesquisa\fmPesquisa.resx">
+      <DependentUpon>fmPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Serviços\fmServicos.resx">
+      <DependentUpon>fmServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-análise-financeira-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-caixa-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendário-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendário-de-saúde-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendário-do-bebê-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancelar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-casa-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-casa-64 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-casa-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-enviar-documento-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-estatísticas-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-excluir-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-excluir-64 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-excluir-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-facebook-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gráfico-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gráfico-de-pizza-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-instagram-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lixo-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mais-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mais-calendário-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-planejador-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-prancheta-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-selecionado-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sincronizar-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sincronizar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-twitter-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuário-masculino-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-adicionar-usuário-masculino-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pasta-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pasta-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pasta-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pesquisar-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-papel-higiênico-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-colar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inspeção-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-editar-vários-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter-novo-avatar-padrao-2017-bluebus-660x440.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\319.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-apagar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\795240_preview_preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\795240_preview_preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-0001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-vector-icon-vector-calendar-icon-115629682028kybzmvoe5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\417-4176541_cis-icon-calendar-date-icon-png-transparent-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-icons-calendar-date-time-png-clip-art.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31-316421_calendar-computer-icons-clip-art-calendar-date-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-pngrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calender-vector-calendar-date-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree-wood-png-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree-wood-png-31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\795240_preview_preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teste 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-cadastroClientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teste 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teste 2 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9b0555a5a9c693f346eed688cfa203f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2020-04-29 at 22.30.24.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2020-04-29 at 22.30.241.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="InteropExtensionLib">
+      <Guid>{C3D19104-7A67-4EB0-B459-D5B2E734D430}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="LCC11">
+      <Guid>{EDCD5812-6A06-43C3-AFAC-46EF5D14E22C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MsoScreenRecorderLib">
+      <Guid>{73720002-33A0-11E4-9B9A-00155D152105}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\116680860.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\DENTREEEEEE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\417-4170774_dentista-dentalife-veracruz-webex-meetings-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\dentista-png-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\unnamed %281%29000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\SeekPng.com_dentista-png_4170774.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\icons8-desbloquear-2-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\icons8-usuário-de-gênero-neutro-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\Actions-draw-eraser-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\toothpaste toothbrush GIF by jasnim - Find &amp; Share on GIPHY_files\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\teste 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\icons8-visível-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Banco SQL\ProcBuscarAgendamento.sql" />
+    <Content Include="Banco SQL\ProcGridData.sql" />
+    <Content Include="Banco SQL\ProcGridPeriodo.sql" />
+    <Content Include="Banco SQL\ProcHorarioFinalDisponivel.sql" />
+    <Content Include="Banco SQL\ProcHorarioInicialDisponivel.sql" />
+    <Content Include="Banco SQL\ProcInserirCliente.sql" />
+    <Content Include="Banco SQL\ProcInserirConsulta.sql" />
+    <Content Include="Banco SQL\ProcInserirFuncionario.sql" />
+    <Content Include="Banco SQL\ProcInserirProfissional.sql" />
+    <Content Include="Banco SQL\ProcMostrarCodigoFonte.sql" />
+    <Content Include="Banco SQL\ProcRelatorio.sql" />
+    <Content Include="Banco SQL\ProcRemoverServico.sql" />
+    <Content Include="Banco SQL\ProcVerificarLogin.sql" />
+    <Content Include="Banco SQL\Script Criação Banco.sql" />
+    <Content Include="Icones\icons8-hora-extra-64.png" />
+    <Content Include="Taresfas a cumprir\Tarefas.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

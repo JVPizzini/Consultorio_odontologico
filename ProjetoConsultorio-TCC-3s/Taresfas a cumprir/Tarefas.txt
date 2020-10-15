@@ -1,0 +1,27 @@
+﻿ ****************************** Tela Profissional 
+- Validar DtNasc (OK)
+- Verificar botão de limpar, retirar cidade e UF (OK)
+
+******************************* Tela Cliente
+- Incluir dados da cidade e Uf (OK)
+- Verificar botão de limpar, retirar cidade e UF (OK)
+
+******************************* Tela funcionario (OK)
+- Nome
+- Cep
+- End completo 
+- telefone
+******************************** Telas em geral
+- colocar a opção Alterar/Update (ok)
+- click duplo no grid para abrir os forms já na
+opção de alterar.(ok)
+********************************* Telas gerais
+- Colocar busca por CPF e NOME(ok)
+
+
+******************************** NOVAS TAREFAS
+- Validar CPF já existente
+- ADICIONAR VERIFICAÇÃO DE SENHA NO LOGIN (TAB -Funcionario    cpf/senha)
+- MEXER NA PAGINA DO AGENDAMENTO 
+
+-Parei no CellDoubleClick do agendamento
